@@ -1,0 +1,16 @@
+<header>
+  <div class="handlers">
+
+    <app-filter></app-filter>
+    <app-sort></app-sort>
+    <div class="order">
+      <i class="fi fi-rr-sort-amount-down-alt" (click)="changeOrder(false)"></i>
+      <i class="fi fi-rr-sort-amount-down" (click)="changeOrder(true)"></i>
+    </div>
+  </div>
+
+  <div class="user">
+    <p>{{'' | username}}</p>
+  </div>
+
+</header>

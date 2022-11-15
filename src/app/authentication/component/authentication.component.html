@@ -1,0 +1,13 @@
+<div class="main">
+  <app-auth-form class="part-1" (changeForm)="trigger()"
+                 [@visibility]="isRegister? 'fade-in':'fade-out'"
+                 [@reverseForm] = "isChangedPosition? 'right': 'left'"
+                 ></app-auth-form>
+  <div class="part-2" [@reverseSun]="isFaded?  'right'  :'left'"
+       (@reverseSun.done)='isChangedPosition = !isChangedPosition'>
+    <div class="circle" [@sunPosition]="isChangedPosition? 'high' : 'down'"
+    ></div>
+    <div class="blurred"></div>
+  </div>
+</div>
+

@@ -1,0 +1,14 @@
+<div class="add" (click)="open = !open"><i class="fi fi-sr-plus icon"></i></div>
+
+<div *ngIf="open" class="modal">
+  <form class="modal-content" [formGroup]="dashboardForm" (blur)="open = false">
+    <label for="title">
+      <input id="title" placeholder="Dashboard title" formControlName="title">
+    </label>
+    <label for="description">
+      <input id="description" placeholder="Dashboard description" name="description" formControlName="description">
+    </label>
+    <button class="sendBtn" (click)="sendNewDashboard(); open = false" [disabled]="!dashboardForm.valid">Send</button>
+    <button class="sendBtn" (click)="open = false">Close</button>
+  </form>
+</div>

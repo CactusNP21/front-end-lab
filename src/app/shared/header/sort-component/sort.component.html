@@ -1,0 +1,12 @@
+<div class="sort">
+  <p>Sort by</p>
+  <select #sortField (change)="sort()">
+    <option value="title">Name</option>
+    <option value="date">Date</option>
+    <ng-container *ngIf="home">
+      <option value="tt">Todo tasks</option>
+      <option value="pt">In progress tasks</option>
+      <option value="dt">Done tasks</option>
+    </ng-container>
+  </select>
+</div>

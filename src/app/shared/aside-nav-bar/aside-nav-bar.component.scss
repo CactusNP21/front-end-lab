@@ -1,0 +1,58 @@
+.main {
+  height: 100vh;
+  border-right: 0.15rem rgba(240, 240, 240, 0.71) solid;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5vh 0 0 4vw;
+  box-sizing: border-box;
+
+  h2 {
+    font-size: 1.3rem;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+nav {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 83%;
+  padding: 0 0 10vh 0;
+  justify-content: space-between;
+
+  .pages, .actions {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .page{
+    color: #b1b1b1;
+    box-sizing: border-box;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-right: -0.15rem;
+    border: 0;
+    border-right: 0.50rem transparent solid;
+    font-size: 1.2rem;
+    user-select: none;
+  }
+
+
+  .selected {
+    color: black;
+    border-right: blueviolet solid 0.25rem;
+  }
+  .log-out {
+    color: #6d0d0d;
+  }
+  .black {
+    color: black;
+  }
+
+}

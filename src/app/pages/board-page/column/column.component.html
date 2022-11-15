@@ -1,0 +1,21 @@
+<div class="column">
+
+  <div class="head">
+    <h3 class="type" *ngIf="type == 'todo'">To do</h3>
+    <h3 class="type" *ngIf="type == 'progress'">In progress</h3>
+    <h3 class="type" *ngIf="type == 'done'">Done</h3>
+    <p>{{jobs.length}}</p>
+  </div>
+
+  <button (click)="add()"><i class="fi fi-br-plus"></i></button>
+
+  <div class="content">
+
+    <ng-container *ngFor="let job of jobs">
+      <app-task [job]="job" appDrag [id]="job.id!" [type]="type" (changes)="commitChanges($event)"></app-task>
+    </ng-container>
+
+  </div>
+
+
+</div>

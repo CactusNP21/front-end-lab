@@ -1,0 +1,37 @@
+.overview {
+  display: grid;
+  grid-template: 12vh 1fr 1fr 1fr / 0.5fr 1fr 1fr 1fr
+;
+  width: 99vw;
+  height: 100vh;
+}
+
+app-header {
+  grid-column: 2/5;
+  position: sticky;
+  top: 0;
+}
+
+app-aside-nav-bar {
+  grid-column: 1/2;
+  grid-row: 1/5;
+}
+
+.dashboard {
+  grid-column: 2/5;
+  grid-row: 2/5;
+  overflow: hidden;
+}
+
+//.inner {
+//  height: 100vh;
+//  overflow: auto;
+//}
+//
+//.col {
+//  overflow: auto;
+//  min-height: 150vh;
+//}
+
+
+

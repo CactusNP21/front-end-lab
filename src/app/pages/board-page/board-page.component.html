@@ -1,0 +1,29 @@
+<div class="main">
+  <div class="head">
+    <h1>{{dashboard.title}}</h1>
+    <button (click)="delete()">Delete this board</button>
+  </div>
+  <div class="projects">
+
+    <app-column data-source='todo' [jobs]="dashboard.tasks.todo" [type]="'todo'"
+                appDrop [target]="'todo'"
+                (addJob)="dashboardFactory('add', 'todo', $event)"
+                (changes)="dashboardFactory('update', 'todo', $event)">
+
+    </app-column>
+
+    <app-column data-source='progress' [jobs]="dashboard.tasks.progress" [type]="'progress'"
+                appDrop [target]="'progress'"
+                (addJob)="dashboardFactory('add', 'progress', $event)"
+                (changes)="dashboardFactory('update', 'progress', $event)">
+
+    </app-column>
+
+    <app-column data-source='done' [jobs]="dashboard.tasks.done" [type]="'done'"
+                appDrop [target]="'done'"
+                (addJob)="dashboardFactory('add', 'done', $event)"
+                (changes)="dashboardFactory('update', 'done', $event)">
+
+    </app-column>
+  </div>
+</div>

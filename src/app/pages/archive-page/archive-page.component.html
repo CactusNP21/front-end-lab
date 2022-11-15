@@ -1,0 +1,17 @@
+<div>
+  <h1>Archive</h1>
+  <input type="color" [(ngModel)]="color" [value]="'#ffffff'">
+  <div class="container" [ngStyle]="{'background': color!}">
+    <div class="inner" >
+      <ng-container *ngFor="let task of archive">
+        <div class="unit">
+          <p>{{task.name}}</p>
+          <ng-container *ngFor="let comm of task.comments">
+            <p class="sub">{{comm}}</p>
+          </ng-container>
+          <p class="sub">{{task.date | date}}</p>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

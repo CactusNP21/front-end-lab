@@ -1,0 +1,26 @@
+<div class="unit" draggable="true">
+  <div class="container" >
+    <div class="controls" >
+      <button (click)="edit()" >Edit</button>
+      <button (click)="delete()" >Delete</button>
+      <button *ngIf="type === 'done'" (click)="archive()">Archive</button>
+    </div>
+  </div>
+  <div class="detail">
+    <input class="title"  value="{{job.name}}" (change)="disabled = true; editTitle(title.value)"
+           [disabled]="disabled" #title>
+    <div class="date">
+      <p>{{job.date | date}}</p>
+      <p>{{'C: ' + job.comments.length}}</p>
+    </div>
+  </div>
+  <div  class="comments" >
+      <ul *ngFor="let comment of job.comments; let index = index">
+        <li>{{comment}} <button (click)="deleteComment(index)">Delete</button></li>
+      </ul>
+      <div class="add">
+        <input placeholder="Add new comment" #comment >
+        <button (click)="addComment(comment.value)" >Add</button>
+      </div>
+  </div>
+</div>

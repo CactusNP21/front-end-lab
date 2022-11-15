@@ -1,0 +1,10 @@
+<div class="search">
+  <i class="fi fi-rs-search"></i><input placeholder="Search" #search (keyup)="filter()">
+  <div class="filter">
+    <i class="fi fi-rs-filter"></i>
+    <select #field (change)="filter()">
+      <option *ngIf="home" value="name">Dashboard name</option>
+      <option value="task">Task name</option>
+    </select>
+  </div>
+</div>

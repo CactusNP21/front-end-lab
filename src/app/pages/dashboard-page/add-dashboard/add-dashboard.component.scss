@@ -1,0 +1,70 @@
+.icon {
+  font-size: 1.5rem;
+}
+.add {
+  height: 5vh;
+  width: 5vw;
+  background: rgba(180, 148, 249, 0.28);
+  color: #6f2daa;
+  border-radius: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,.6);
+  .modal-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2vw;
+    height: 40vh;
+    width: 40vw;
+    background-color: #e3cff8;
+    position: relative;
+    border-radius: 10px;
+    top: 20%;
+    left: 30%;
+    .close {
+      position: relative;
+      font-size: 2rem;
+      color: #0060cf;
+      left: 40%;
+    }
+    input{
+      height: 7vh;
+      width: 30vw;
+      border:0;
+      padding: 1vw;
+      border-bottom: 0.25rem solid #0060cf;
+      outline-width: 0;
+      box-sizing: border-box;
+      font-size: 1rem;
+      &::placeholder{
+        font-size: 1rem;
+      }
+    }
+    .sendBtn {
+      font-size: 1.25rem;
+      width: 10vw;
+      background: transparent;
+      border: 0.15rem solid #0060cf;
+      border-radius: 10px;
+      color: #161fac;
+      &:disabled {
+        color: rgba(22, 31, 172, 0.51);
+        border: 0.15rem solid rgba(0, 96, 207, 0.5);
+      }
+    }
+ }
+
+
+}

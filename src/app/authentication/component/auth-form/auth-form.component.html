@@ -1,0 +1,51 @@
+<div class="main">
+  <h1>{{title}}</h1>
+  <p><span>{{subtitle}} Please enter your details</span></p>
+  <form [formGroup]="dataForm">
+
+    <label for="login">
+      <p>Login</p>
+      <input id="login" placeholder="Enter login" formControlName="login" class="default"
+             [ngClass]="{'unauthorized': unauthorized || invalidUsername}" (change)="unauthorized = false"
+             (blur)="checkName()" #loginInput>
+    </label>
+
+    <p *ngIf="invalidUsername" class="alert">This username exists</p>
+    <p *ngIf="validUsername" class="success">Available</p>
+
+    <label for="password">
+      <p>Password</p>
+      <input id="password" placeholder="Enter password" formControlName="password" class="default"
+             [ngClass]="{'unauthorized': unauthorized}" (change)="unauthorized = false"
+             #password>
+    </label>
+
+    <div class="remember" *ngIf="home">
+
+      <label for="remember">
+        <input id="remember" type="checkbox" formControlName="remember">
+        <p>Remember password </p>
+      </label>
+      <a>Forgot password?</a>
+
+    </div>
+    <p class="alert" *ngIf="unauthorized">Invalid login or password</p>
+    <p class="success" *ngIf="created">Created successfully</p>
+    <button type="submit" [disabled]="!dataForm.valid" #loginBtn *ngIf="home === true"
+            (click)="login()">Sign In
+    </button>
+    <button type="submit" [disabled]="!dataForm.valid && validUsername" #registerBtn (click)="createUser()"
+            *ngIf="home === false">Sign Up
+    </button>
+
+  </form>
+  <div class="create" *ngIf="register === false">
+    <p><span>Don't have an account?</span></p>
+    <a (click)="change()">Sign up</a>
+  </div>
+
+  <div class="create" *ngIf="register === true">
+    <p><span>Already have an account?</span></p>
+    <a (click)="change()">Sign in</a>
+  </div>
+</div>

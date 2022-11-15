@@ -1,0 +1,103 @@
+p {
+  margin: 0;
+}
+
+.unit {
+  padding: 1.25vw;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  word-break: break-word;
+
+  .date {
+    font-size: 0.75rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+
+  input {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+  }
+}
+
+.comments {
+  border-top: 0.05rem #0060cf solid;
+}
+
+ul {
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  height: 100%;
+}
+
+li {
+  height: 100%;
+  margin: 0;
+}
+li::marker {
+  color: #929292;
+}
+
+.controls {
+  padding: 0.5vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+button {
+  border: 0;
+  border-radius: 5px;
+  background-color: rgba(137, 102, 170, 0.09);
+  color: blueviolet;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 4px 0px;
+  width: 30%;
+  height: 3vh;
+}
+
+.saveBtn {
+  height: 3vh;
+  width: 100%;
+}
+
+.add {
+  height: 100%;
+  border-top: 0.05rem #0060cf solid;
+  padding: 1vw;
+  display: flex;
+  justify-content: space-between;
+
+  input {
+    border: 0;
+    border-bottom: 0.1rem blueviolet solid;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 70%;
+    outline-width: 0;
+  }
+
+}
+
+.title {
+  font-size: 1.25rem;
+  width: 100%;
+}
+
+

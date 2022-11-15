@@ -1,0 +1,19 @@
+<div class="container"  (mouseleave)="end()"  (mouseenter)="start()">
+  <div   [@show]="down ? 'show' : 'hide'" class="detailed">
+    <div   class="controls">
+      <button (click)="editEnable()" appStopProp>Edit</button>
+      <button (click)="delete()" appStopProp>Delete</button>
+    </div>
+  </div>
+  <div class="default" [@over]=" over? 'down' : 'up' " [routerLink]="['board']" [queryParams]="{id: id}">
+
+      <input class="title" [disabled]="disabled"
+         (change)="edit(); disabled = true " #titleP value="{{dashboard.title}}" appStopProp>
+    <div class="info">
+      <p class="date">{{dashboard.date | date}}</p>
+      <p class="date">{{'T: ' + dashboard.tasks.todo.length + ' '
+      + 'P: ' + dashboard.tasks.progress.length + ' ' + 'D: '+ dashboard.tasks.done.length }}</p>
+    </div>
+      <p class="description">{{dashboard.description | titlecase}}</p>
+  </div>
+</div>

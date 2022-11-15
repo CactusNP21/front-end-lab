@@ -1,0 +1,28 @@
+<div class="main">
+  <h2>.front-end lab</h2>
+
+  <nav>
+
+    <div class="pages">
+      <div [routerLink]="['dashboards']" class="page"
+           [ngClass]="url === '/app/dashboards' ? 'selected' : ''"
+      ><i class="fi fi-rr-home"></i> <a>Overview</a></div>
+      <ng-container *ngIf="lastId">
+
+        <div [ngClass]="url.includes('?') ? 'selected' : ''"
+             [routerLink]="['dashboards/board']" [queryParams]="{id: lastId}" class="page"><i
+          class="fi fi-rr-search-alt"></i> <a>Tasks</a></div>
+
+        <div [ngClass]="url.includes('/archive') ? 'selected' : ''"
+             [routerLink]="['dashboards/board/archive']" class="page"><i class="fi fi-rs-archive"></i> <a>Archive</a>
+        </div>
+
+      </ng-container>
+    </div>
+
+    <div class="actions">
+      <div class="page" (click)="logOut()"><i class="fi fi-rr-exit black"></i><a class="log-out">Log Out</a></div>
+    </div>
+
+  </nav>
+</div>

@@ -1,0 +1,54 @@
+<div class="layout">
+  <div class="handler">
+    <h1>Dashboards</h1>
+    <app-add-dashboard class="default add"></app-add-dashboard>
+  </div>
+
+  <div class="wrapper">
+    <div class="dashboards">
+
+      <div class="col">
+        <ng-container *ngFor="let dash of transposed[0]">
+          <app-dashboard
+            [dashboard]="dash"
+            [routerLink]="['board']" [queryParams]="{id: dash._id}"
+            class="default"></app-dashboard>
+        </ng-container>
+      </div>
+
+      <div class="col">
+        <ng-container *ngFor="let dash of transposed[1]">
+          <app-dashboard
+
+            [dashboard]="dash"
+            [routerLink]="['board']" [queryParams]="{id: dash._id}"
+            class="default"></app-dashboard>
+        </ng-container>
+      </div>
+      <div class="col">
+        <ng-container *ngFor="let dash of transposed[2]">
+          <app-dashboard
+
+            [dashboard]="dash"
+            [routerLink]="['board']" [queryParams]="{id: dash._id}"
+            class="default"></app-dashboard>
+        </ng-container>
+      </div>
+      <div class="col">
+
+        <ng-container *ngFor="let dash of transposed[3]">
+          <app-dashboard
+            [dashboard]="dash"
+
+            [routerLink]="['board']" [queryParams]="{id: dash._id}"
+            class="default"></app-dashboard>
+        </ng-container>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
