@@ -15,8 +15,11 @@ export class LayoutResolver implements Resolve<Observable<Dashboard[]>> {
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Dashboard[]>{
     console.log('resolver')
     if (this.ds.boards) {
-      return of(this.ds.boards)
+      if (this.ds.boards.length > 0) {
+        return of(this.ds.boards)
+      }
     }
+
     return this.ds.loadDashboards()
   }
 }

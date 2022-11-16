@@ -26,6 +26,7 @@ export class AsideNavBarComponent implements OnInit, OnDestroy {
     sessionStorage.removeItem('token');
     localStorage.removeItem('token');
     this.router.navigate(['auth'])
+    this.ds.clearData()
   }
 
 

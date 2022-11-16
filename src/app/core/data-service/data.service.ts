@@ -24,6 +24,10 @@ export class DataService {
   ) {
   }
 
+  clearData() {
+    this.boards = []
+  }
+
   updateDashboards(dashboard: Dashboard) {
     this.boards[this.boards.findIndex(value => value._id === dashboard._id)] = dashboard
   }
