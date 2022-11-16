@@ -24,6 +24,7 @@ export class HeaderComponent implements OnInit {
   changeOrder(boolean: boolean) {
     if (this.home) {
       this.ss.sendOrder(boolean)
+      return
     }
     this.sts.sendOrder(boolean)
   }

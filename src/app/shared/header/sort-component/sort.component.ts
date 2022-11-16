@@ -24,6 +24,7 @@ export class SortComponent implements OnInit {
   sort() {
     if (this.home) {
       this.ss.sendSortField(this.sortField.nativeElement.value)
+      return
     }
     this.sts.sendSortValue(this.sortField.nativeElement.value)
   }

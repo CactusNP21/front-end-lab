@@ -18,12 +18,7 @@ export class FilterComponent implements OnInit {
   constructor(private filterService: FilterService,
               private fts: FilterTasksService,
               private router: Router) {
-    this.router.events.subscribe(event => {
-      if (event instanceof NavigationEnd) {
-        this.home = !this.router.url.includes('/board')
-      }
 
-    })
   }
 
   delayTimer: NodeJS.Timeout;
@@ -33,7 +28,7 @@ export class FilterComponent implements OnInit {
     this.delayTimer = setTimeout(() => {
       if (this.home) {
         this.filterService.sendFilterValue(this.searchInput.nativeElement.value, this.selectField.nativeElement.value)
-      }else {
+      } else {
         this.fts.sendValue(this.searchInput.nativeElement.value)
       }
 
@@ -42,7 +37,17 @@ export class FilterComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        if (!this.searchInput.nativeElement.value) {
+          this.searchInput.nativeElement.value = ''
+          this.filterService.sendFilterValue(this.searchInput.nativeElement.value, this.selectField.nativeElement.value)
+        }
+        this.home = !this.router.url.includes('/board')
+      }
 
+    })
+    this.home = !this.router.url.includes('/board')
   }
 
 }

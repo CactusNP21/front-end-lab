@@ -3,7 +3,7 @@
   <div class="filter">
     <i class="fi fi-rs-filter"></i>
     <select #field (change)="filter()">
-      <option *ngIf="home" value="name">Dashboard name</option>
+      <option *ngIf="home" value="name" [selected]="true">Dashboard name</option>
       <option value="task">Task name</option>
     </select>
   </div>

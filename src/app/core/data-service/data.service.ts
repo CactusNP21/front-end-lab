@@ -25,7 +25,6 @@ export class DataService {
   }
 
   updateDashboards(dashboard: Dashboard) {
-    console.log(this.boards.findIndex(value => value._id === dashboard._id))
     this.boards[this.boards.findIndex(value => value._id === dashboard._id)] = dashboard
   }
 
@@ -96,6 +95,9 @@ export class DataService {
         id: id
       }
     }).pipe(map(value => {
+        if (id === this.lastDashboardId) {
+          this.sendLastDashboardId('')
+        }
         this.boards = this.boards.filter(value1 => value1._id !== id)
         return value
       }),

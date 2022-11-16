@@ -67,7 +67,6 @@ export class DashboardComponent implements OnInit {
   }
 
   editEnable() {
-    console.log('2')
     this.disabled = false
     setTimeout(() => {
       this.titleP.nativeElement.focus()
@@ -78,6 +77,7 @@ export class DashboardComponent implements OnInit {
     this.ds.updateDashboard(this.id, this.titleP.nativeElement.value).subscribe(
       value => {
         if (!(value instanceof HttpErrorResponse)) {
+          this.dashboard.title = this.titleP.nativeElement.value
           this.ds.updateDashboards(this.dashboard)
         }
       }
@@ -87,7 +87,7 @@ export class DashboardComponent implements OnInit {
   delete() {
     this.ds.deleteDashboard(this.id).subscribe(response => {
       if (!(response instanceof HttpErrorResponse)) {
-        this.fs.sendFilterValue('', 'name', this.id)
+        this.fs.sendDeleteId(this.id)
       }
     })
   }

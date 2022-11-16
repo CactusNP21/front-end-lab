@@ -102,7 +102,7 @@ export class SortService {
   }
 
   transpose(dashboards: any) {
-
+    dashboards = dashboards.filter((value: any) => value)
     let chunk: any = []
     let transposed: Dashboard[][]
     const leftToTranspose = 4 - dashboards.length % 4

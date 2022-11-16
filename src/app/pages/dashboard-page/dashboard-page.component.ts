@@ -30,9 +30,10 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
 
 
   ngOnInit(): void {
-     this.activatedRoute.data.subscribe(({dashboards}) => {
-      console.log('ACTIVATED ROUTE')
-      this.transposed = this.ss.transpose(dashboards)
+    this.activatedRoute.data.subscribe(({dashboards}) => {
+        console.log('ACTIVATED ROUTE')
+      console.log(dashboards)
+        this.transposed = this.ss.transpose(dashboards);
         this.ds.sendTransposedBoards(this.transposed)
       }
     )
