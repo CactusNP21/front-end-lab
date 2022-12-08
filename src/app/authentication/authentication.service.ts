@@ -6,7 +6,7 @@ import {catchError, Observable, of} from "rxjs";
   providedIn: 'root'
 })
 export class AuthenticationService {
-  url = 'https://nest-epam.herokuapp.com'
+  url = 'https://angular-back.vercel.app'
 
   constructor(private http: HttpClient) {
   }

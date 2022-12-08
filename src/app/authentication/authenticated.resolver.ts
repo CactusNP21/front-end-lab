@@ -15,17 +15,22 @@ export class AuthenticatedResolver implements Resolve<boolean> {
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
     if ((sessionStorage.getItem('token')! || localStorage.getItem('token'))) {
-      const {
-        username,
-        sub
-      } = JSON.parse(window.atob(((sessionStorage.getItem('token')! || localStorage.getItem('token'))!)
-        .split('.')[1]));
-      if (username && sub) {
-        this.router.navigate(['app/dashboards'])
-        return of(true)
+      try {
+        const {
+          username,
+          sub
+        } = JSON.parse(window.atob(((sessionStorage.getItem('token')! || localStorage.getItem('token'))!)
+          .split('.')[1]));
+        if (username && sub) {
+          this.router.navigate(['app/dashboards'])
+          return of(true)
+        }
+      }
+      catch {
+        sessionStorage.clear()
+        localStorage.removeItem('token')
+        return of(false)
       }
     }
     return of(false)
-
-  }
-}
+}}
