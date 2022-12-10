@@ -7,7 +7,7 @@ import {Dashboard, Tasks} from "../models/models";
   providedIn: 'root'
 })
 export class DataService {
-  url = 'https://nest-epam.herokuapp.com'
+  url = 'https://angular-back.vercel.app'
 
 
   username: string
