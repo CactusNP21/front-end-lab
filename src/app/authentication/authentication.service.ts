@@ -12,7 +12,7 @@ export class AuthenticationService {
   }
 
   checkUsername(username: string): Observable<any> {
-    return this.http.post(this.url + '/user/check/', {
+    return this.http.post(this.url + '/user/check', {
       username: username
     }).pipe(catchError(err => {
       return of(new HttpErrorResponse({status: err.status}))
