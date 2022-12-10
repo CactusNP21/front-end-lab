@@ -6,13 +6,13 @@ import {catchError, Observable, of} from "rxjs";
   providedIn: 'root'
 })
 export class AuthenticationService {
-  url = 'https://angular-back.vercel.app'
+  url = 'https://angular-back-3ij74jxm6-cactusnp21.vercel.app'
 
   constructor(private http: HttpClient) {
   }
 
   checkUsername(username: string): Observable<any> {
-    return this.http.post(this.url + '/user/check', {
+    return this.http.post(this.url + '/user/check/', {
       username: username
     }).pipe(catchError(err => {
       return of(new HttpErrorResponse({status: err.status}))
