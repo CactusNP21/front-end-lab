@@ -6,7 +6,7 @@ import {catchError, Observable, of} from "rxjs";
   providedIn: 'root'
 })
 export class AuthenticationService {
-  url = 'https://angular-back-3ij74jxm6-cactusnp21.vercel.app'
+  url = 'https://angular-back.vercel.app'
 
   constructor(private http: HttpClient) {
   }
